@@ -66,7 +66,7 @@ mkdir -p "$artifact_id/.git" || die "unable to create \"$artifact_id\"!"
 # create the links to the original repo.  explicitly exclude index, HEAD and
 # logs/HEAD from the list since they are purely related to the current working
 # directory, and should not be shared.
-for x in config refs logs/refs objects info hooks packed-refs remotes rr-cache svn
+for x in config refs logs/refs objects info/* hooks packed-refs remotes rr-cache svn
 do
 	case $x in
 	*/*)
@@ -88,10 +88,10 @@ sparse_checkout="$script_path/artifacts/$artifact_id/git-sparse-checkout"
 if [ ! -f "$sparse_checkout" ]; then
 	mkdir -p `dirname "$sparse_checkout"`
 	echo src/${artifact_id//\./\/} > "$sparse_checkout"
-	vim .git/info/sparse-checkout
+	vim "$sparse_checkout"
 fi
 
-if [ -f .git/info/sparse-checkout ]; then 
+if [ -e .git/info/sparse-checkout ]; then
 	rm .git/info/sparse-checkout
 fi
 
