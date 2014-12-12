@@ -1,0 +1,2 @@
+src/net/java/sip/communicator/service/protocol/*
+!src/net/java/sip/communicator/service/protocol/media
