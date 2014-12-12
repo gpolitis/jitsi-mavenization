@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jitsi</groupId>
+	<version>1.0-SNAPSHOT</version>
+	<artifactId>org.jitsi.sip-communicator.aggregator</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>../org.jitsi.libjitsi</module>
+		<module>../org.jitsi.sip-communicator</module>
+		<module>../net.sf.fmj</module>
+		<module>../org.ice4j</module>
+		<module>../org.otr4j</module>
+		<module>../net.java.sip.communicator.util</module>
+		<module>../net.java.sip.communicator.service.protocol</module>
+		<module>../net.java.sip.communicator.impl.netaddr</module>
+		<module>../net.java.sip.communicator.service.netaddr</module>
+		<module>../net.java.sip.communicator.service.gui</module>
+		<module>../net.java.sip.communicator.impl.packetlogging</module>
+		<module>../net.java.sip.communicator.service.credentialsstorage</module>
+		<module>../net.java.sip.communicator.service.sysactivity</module>
+		<module>../net.java.sip.communicator.service.dns</module>
+		<module>../net.java.sip.communicator.launcher</module>
+		<module>../net.java.sip.communicator.impl.configuration</module>
+		<module>../net.java.sip.communicator.service.contactsource</module>
+		<module>../net.java.sip.communicator.service.contactlist</module>
+		<module>../net.java.sip.communicator.service.muc</module>
+		<module>../net.java.sip.communicator.service.resources</module>
+		<module>../net.java.sip.communicator.service.calendar</module>
+		<module>../net.java.sip.communicator.service.msghistory</module>
+		<module>../net.java.sip.communicator.service.history</module>
+		<module>../net.java.sip.communicator.impl.libjitsi</module>
+		<module>../net.java.sip.communicator.impl.protocol.jabber</module>
+		<module>../net.java.sip.communicator.service.certificate</module>
+		<module>../net.java.sip.communicator.service.customavatar</module>
+		<module>../net.java.sip.communicator.service.hid</module>
+	</modules>
+</project>
