@@ -4,7 +4,7 @@ MAVEN_REPO="$(mvn help:evaluate -Dexpression=settings.localRepository | grep -v 
 GROUP_ID=org.jitsi
 
 # Adjust the following 3 variables to suit your environment.
-JITSI_HOME="$HOME/BlueJimp/src/org.jitsi.sipcomm"
+JITSI_HOME="$HOME/BlueJimp/src/org.jitsi.sip-communicator"
 LIBJITSI_HOME="$HOME/BlueJimp/src/org.jitsi.libjitsi"
 JVB_HOME="$HOME/BlueJimp/src/org.jitsi.videobridge"
 
@@ -12,6 +12,11 @@ install_lib() {
 	local FILE="$1"
 	local ARTIFACT_ID="$2"
 	local VERSION="$3"
+
+	if [ ! -f "$FILE" ]; then
+		echo "$FILE was not found!"
+		return
+	fi
 
 	if [ -z "$VERSION" ] ; then
 		VERSION='1.0-SNAPSHOT'
@@ -60,10 +65,11 @@ install_lib $JITSI_HOME/lib/installer-exclude/libdbus-java-2.7.jar libdbus-java 
 install_lib $JITSI_HOME/lib/installer-exclude/jdic_misc.jar jdic-misc
 install_lib $JITSI_HOME/lib/installer-exclude/jna.jar jna 3.2.7
 install_lib $JITSI_HOME/lib/installer-exclude/jna-platform.jar jna-platform 3.2.7
+install_lib $JITSI_HOME/lib/installer-exclude/irc-api-1.0.jar irc-api
 
 # install mac specific jitsi libs
-install_lib $JITSI_HOME/lib/installer-exclude/os-specific/mac/growl4j.jar growl4j 
-install_lib $JITSI_HOME/lib/installer-exclude/os-specific/mac/OrangeExtensions.jar AppleJavaExtensions
+install_lib $JITSI_HOME/lib/os-specific/mac/growl4j.jar growl4j 
+install_lib $JITSI_HOME/lib/os-specific/mac/OrangeExtensions.jar AppleJavaExtensions
 
 # install libjitsi libs
 install_lib $LIBJITSI_HOME/lib/jspeex.jar jspeex 0.9.7
