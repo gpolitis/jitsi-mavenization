@@ -9,6 +9,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jitsi</groupId>
+            <artifactId>net.java.sip.communicator.service.resources</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
 	    <sourceDirectory>src</sourceDirectory>
