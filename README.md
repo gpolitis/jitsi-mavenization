@@ -26,9 +26,9 @@ IntelliJ IDEA and it will just work (again use the aggregator projects). I've
 been trying to mavenize Jitsi (SIP Communicator) and althought I have done some
 progress there, it's not yet functional.
 
-This is a work in progress, USE IT AT YOUR OWN RISK. Althought I'm affiliated
-with Jitsi, this is not an official effort to mavenize Jitsi, it's just
-personal work that I'm sharing with whoever might be interested.
+DISCLAIMER: This is a work in progress, USE IT AT YOUR OWN RISK. Althought I'm
+affiliated with Jitsi, this is not an official effort to mavenize Jitsi, it's
+just personal work that I'm sharing with whoever might be interested.
 
 I'm not a maven expert nor a git wizard nor a shell guru, so I expect there's
 lots of room for improvements. The code is ugly but it works for me. 
