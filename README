@@ -21,5 +21,5 @@ This is a work in progress, USE IT AT YOUR OWN RISK. Althought I'm affiliated
 with Jitsi, this is not an official effort to mavenize Jitsi, it's just
 personal work that I'm sharing with whoever might be interested.
 
-Also, I'm not a maven expert nor a git wizard, so I expect there's lots of room
-for improvements. 
+I'm not a maven expert nor a git wizard nor a shell guru, so I expect there's
+lots of room for improvements. The code is ugly but it works for me. 
