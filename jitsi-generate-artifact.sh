@@ -36,14 +36,6 @@ case "$git_dir" in
 	;;
 esac
 
-# don't link to a configured bare repository
-isbare=$(git --git-dir="$git_dir" config --bool --get core.bare)
-if test ztrue = z$isbare
-then
-	die "\"$git_dir\" has core.bare set to true," \
-		" remove from \"$git_dir/config\" to use $0"
-fi
-
 # don't link to a workdir
 if test -h "$git_dir/config"
 then
@@ -63,21 +55,15 @@ git_dir=$(cd "$git_dir"; pwd)
 # create the workdir
 mkdir -p "$artifact_id/.git" || die "unable to create \"$artifact_id\"!"
 
-# create the links to the original repo.  explicitly exclude index, HEAD and
-# logs/HEAD from the list since they are purely related to the current working
-# directory, and should not be shared.
-for x in config refs logs/refs objects info/* hooks packed-refs remotes rr-cache svn
-do
-	case $x in
-	*/*)
-		mkdir -p "$(dirname "$artifact_id/.git/$x")"
-		;;
-	esac
-	ln -s "$git_dir/$x" "$artifact_id/.git/$x"
-done
-
 # now setup the workdir
 cd "$artifact_id"
+
+# share objects
+git init
+mkdir -p ".git/objects/info/" || die "unable to create \"$artifact_id\"!"
+rm -rf .git/config
+ln -s "$git_dir/config" .git/config
+echo "$git_dir/objects" > .git/objects/info/alternates
 
 # copy the HEAD from the original repository as a default branch
 cp "$git_dir/HEAD" .git/HEAD
@@ -91,15 +77,11 @@ if [ ! -f "$sparse_checkout" ]; then
 	vim "$sparse_checkout"
 fi
 
-if [ -e .git/info/sparse-checkout ]; then
-	rm .git/info/sparse-checkout
-fi
-
 ln -s "$sparse_checkout" .git/info/sparse-checkout
 
 # checkout the branch (either the same as HEAD from the original repository, or
 # the one that was asked for)
-git checkout -f $branch
+git pull origin $branch
 
 # add initial pom.xml
 pom_path="$script_path/artifacts/$artifact_id/pom.xml"
