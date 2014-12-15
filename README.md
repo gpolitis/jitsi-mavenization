@@ -6,15 +6,15 @@ repository so that they can be shared.
 
 The repository contains three POSIX compliant shell scripts :
 
-- mvn-extract-artifact.sh : it extracts a bundle from the Jitsi codebase. It
+- [mvn-extract-artifact.sh](mvn-extract-artifact.sh) : it extracts a bundle from the Jitsi codebase. It
   does a sparse checkout that contains only the code for the bundle, isolating
   it from the Jitsi codebase. To minimize disk and network usage, it shares the
   git objects with a complete Jitsi (SIP Communicator) checkout. 
 
-- mvn-extract-all.sh : it calls the jitsi-mavenize-bundle for all the mavenized
+- [mvn-extract-all.sh](mvn-extract-all.sh) : it calls the [mvn-extract-artifact.sh](mvn-extract-artifact.sh) for all the mavenized
   bundles in the artifacts directory.
 
-- mvn-install-deps.sh : it installs external dependencies that are not found in
+- [mvn-install-deps.sh](mvn-install-deps.sh) : it installs external dependencies that are not found in
   a maven repository to the local maven repository.
 
 This is a work in progress, USE IT AT YOUR OWN RISK. Althought I'm affiliated
