@@ -1,5 +1,5 @@
 This is an attempt to mavenize Jitsi and friends. *Everything* is put under the
-`org.jitsi` group id. The artifacts directory contains poms for bundles that
+`org.jitsi` group id. The [artifacts](artifacts/) directory contains poms for bundles that
 have already been mavenized. External dependencies are either pulled from
 maven, or, if they're not yet mavenized, they're installed in the local
 repository so that they can be shared. 
