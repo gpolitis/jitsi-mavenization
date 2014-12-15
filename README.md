@@ -21,9 +21,10 @@ The repository contains three POSIX compliant shell scripts :
   repository.
 
 Maveization of the Jitsi Videobridge and JICOFO is functional, i.e. you can mvn
-compile the project. You can also import it in IntelliJ IDEA and it will just
-work. I've been trying to mavenize Jitsi (SIP Communicator) and althought I
-have done some progress there, it's not yet functional.
+compile the project (use the aggregator projects). You can also import it in
+IntelliJ IDEA and it will just work (again use the aggregator projects). I've
+been trying to mavenize Jitsi (SIP Communicator) and althought I have done some
+progress there, it's not yet functional.
 
 This is a work in progress, USE IT AT YOUR OWN RISK. Althought I'm affiliated
 with Jitsi, this is not an official effort to mavenize Jitsi, it's just
